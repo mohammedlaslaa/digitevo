@@ -9,6 +9,7 @@ COPY package.json yarn.lock ./
 COPY  . ./
 RUN yarn install --silent
 RUN yarn run build
+RUN 
 
 EXPOSE 3000
 
