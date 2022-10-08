@@ -1,7 +1,9 @@
 import React from 'react';
 
+import Construction from 'components/Construction';
+
 function Prices() {
-  return <div> </div>;
+  return <Construction />;
 }
 
 export default Prices;
