@@ -5,7 +5,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: [develop]
+    branches: [main]
 
 jobs:
   build:
@@ -23,9 +23,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: docker build . -t digitevo-dev
-      - run: docker stop digitevo-dev
+      - run: docker build . -t digitevo
+      - run: docker stop digitevo
         continue-on-error: true
-      - run: docker rm digitevo-dev
+      - run: docker rm digitevo
         continue-on-error: true
-      - run: docker run -d --name digitevo-dev -p 4000:3000 digitevo-dev
+      - run: docker run -d --name digitevo -p 5000:3000 digitevo
