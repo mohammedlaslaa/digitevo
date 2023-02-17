@@ -19,15 +19,15 @@ const MainSection: NextPage = () => (
         <p className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-white mt-4 w-100 md:w-4/6 max-w-sm h-20">
           <Typed
             strings={[
-              'Qui vous accompagne à la conception et à la réalisation de vos projets web.',
-              'Qui vous accompagne à la création de votre site vitrine.',
-              'Qui vous accompagne à la création de votre site e-commerce.',
-              'Qui vous accompagne dans votre stratégie digitale.',
+              "L'agence web qui révolutionne le développement de projets grâce à un modèle de collaboration innovant.",
+              'Rejoignez la première agence web qui favorise la collaboration entre professionnel du digital pour vos projets.',
+              'Digitevo, la solution idéale pour les projets web qui nécessitent une collaboration flexible et performante.',
+              "Innovons ensemble, l'agence web qui met en avant un nouveau modèle de collaboration.",
             ]}
             typeSpeed={40}
           />
         </p>
-        <div className="flex md:mt-3">
+        <div className="flex md:mt-4">
           <a
             href="#contactus"
             className="uppercase py-2 px-4 rounded-lg bg-violet-500 border-2 border-transparent text-white text-xs md:text-base mr-4 hover:bg-orange-300"

@@ -7,7 +7,7 @@ import Image from 'next/image';
 const pages = [
   { title: 'Notre expertise', to: '/services' },
   { title: 'Le process', to: '/process' },
-  { title: 'Contactez-nous', to: '#contactus' },
+  { title: 'Contactez-nous', to: '/#contactus' },
 ];
 
 function NavBar() {
@@ -78,7 +78,7 @@ function NavBar() {
         </div>
       )}
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <div className="text-gray-800 dark:text-white font-marck text-6xl h-16">
+        <div className="text-gray-800 font-marck text-6xl h-16">
           <Link href="/">
             <a className="relative flex items-center">
               <div className="hidden sm:block">

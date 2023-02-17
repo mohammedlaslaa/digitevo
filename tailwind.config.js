@@ -3,10 +3,7 @@
 const { APPEAR_FROM_RIGHT } = require('./src/utils/constants/animation.js');
 
 module.exports = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     fontFamily: {
       dancing: 'Dancing Script, cursive',
