@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: docker build . -t digitevo-dev
+      - run: docker build . -f Dockerfile.dev -t digitevo-dev
       - run: docker stop digitevo-dev
         continue-on-error: true
       - run: docker rm digitevo-dev
