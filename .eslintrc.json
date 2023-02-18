@@ -1,14 +1,17 @@
 {
   "parser": "@typescript-eslint/parser",
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "next/core-web-vitals",
-    "prettier"
+  "extends": ["eslint:recommended", "next/core-web-vitals", "prettier"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"], // Your TypeScript files extension
+
+      "extends": ["plugin:@typescript-eslint/recommended"],
+
+      "parserOptions": {
+        "project": ["./tsconfig.json"]
+      }
+    }
   ],
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  },
   "rules": {
     "react/jsx-filename-extension": [
       2,
@@ -29,7 +32,5 @@
         "aspects": ["invalidHref", "preferButton"]
       }
     ]
-  },
-  "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  }
 }

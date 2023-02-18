@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { DialogProvider } from 'utils/hooks/useDialog';
+
 import type { NextPage } from 'next';
 
 import MainSection from 'components/Home/MainSection';
@@ -9,10 +11,12 @@ import StepSection from 'components/Home/StepSection';
 
 const Home: NextPage = () => (
   <main className="dark:bg-gray-800 bg-white relative">
-    <MainSection />
-    <PresentationSection />
-    <StepSection />
-    <ContactUsSection />
+    <DialogProvider>
+      <MainSection />
+      <PresentationSection />
+      <StepSection />
+      <ContactUsSection />
+    </DialogProvider>
   </main>
 );
 

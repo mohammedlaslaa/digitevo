@@ -20,7 +20,8 @@ function App({ Component, pageProps }: AppProps) {
       </div>
       <footer className="flex flex-col items-center justify-center p-6 bg-violet-100 dark:bg-gray-900 sm:flex-row">
         <p className="text-sm text-gray-600 dark:text-gray-300">
-          Made with love by Digitevo 💓
+          Made with love by Digitevo 💓 -{' '}
+          <a href="mailto: contact@digitevo.fr">contact@digitevo.fr</a>
         </p>
       </footer>
     </>
