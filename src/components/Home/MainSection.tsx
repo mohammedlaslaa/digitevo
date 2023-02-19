@@ -6,8 +6,8 @@ import Typed from 'react-typed';
 
 const MainSection: NextPage = () => (
   <section className="bg-white dark:bg-gray-800 flex relative z-10 items-center overflow-hidden px-3 md:px-6">
-    <div className="container mx-auto flex flex-col sm:flex-row relative items-center">
-      <div className="sm:w-1/2 flex flex-col relative z-20">
+    <div className="container p-4 mx-auto flex flex-col sm:flex-row relative items-center">
+      <div className="w-full sm:w-1/2 flex flex-col relative z-20">
         <div className="mt-2 w-1/2 md:w-2/3 lg:w-2/4">
           <span className="inline-block w-3/4 h-1 lg:h-2 bg-violet-500 rounded-full" />
           <span className="inline-block w-[calc(2*((100%/4)/4))] h-1 lg:h-2 ml-1 bg-violet-500 rounded-full" />

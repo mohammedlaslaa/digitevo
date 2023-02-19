@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react';
+import React from 'react';
 
 import type { NextPage } from 'next';
 import Link from 'next/link';
@@ -7,34 +7,18 @@ import { ContactData } from 'utils/types/types';
 import { useDialog } from 'utils/hooks/useDialog';
 import Modal from 'components/Modal';
 import Image from 'next/image';
+import { useForm } from 'react-hook-form';
 
 const ContactSection: NextPage = () => {
   const { open } = useDialog();
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+    reset,
+  } = useForm<ContactData>();
 
-  const [formData, setFormData] = useState<ContactData>({
-    name: '',
-    phone: '',
-    email: '',
-    object: '',
-    message: '',
-  });
-  const [error, setError] = useState<string>('');
-
-  const isDisabled = !Object.keys(formData).every(
-    (key) => formData[key as keyof ContactData]
-  );
-
-  const handleChange = (e: FormEvent) => {
-    const target = e.target as HTMLInputElement;
-
-    const name = target.getAttribute('name');
-
-    if (name)
-      setFormData((prevState) => ({
-        ...prevState,
-        [name]: target.value,
-      }));
-  };
+  const isDisabled = !!Object.keys(errors).length;
 
   const T = () => (
     <Modal>
@@ -53,26 +37,18 @@ const ContactSection: NextPage = () => {
     </Modal>
   );
 
-  const handleSubmit = async () => {
+  const handleSubmitForm = async (data: ContactData) => {
     try {
       await fetch(`${process.env.NEXT_PUBLIC_API}/api/mail`, {
         method: 'POST',
-        body: JSON.stringify(formData),
+        body: JSON.stringify(data),
       });
-
-      setFormData({
-        name: '',
-        phone: '',
-        email: '',
-        object: '',
-        message: '',
-      });
-
-      if (error) setError('');
 
       open(T, { preventScrolling: true });
+
+      reset();
     } catch (error) {
-      setError("Une erreur est survenue lors de l'envoi du formulaire.");
+      //
     }
   };
 
@@ -141,7 +117,7 @@ const ContactSection: NextPage = () => {
               </p>
             </div>
 
-            <div className="mt-6 md:mt-8">
+            <div className="mt-6 md:mt-8 hidden">
               <h3 className="text-gray-300 ">Suivez-nous</h3>
 
               <div className="flex mt-4 -mx-1.5 ">
@@ -223,7 +199,7 @@ const ContactSection: NextPage = () => {
 
           <div className="mt-8 lg:w-1/2 lg:mx-6">
             <div className="w-full px-8 py-10 mx-auto overflow-hidden bg-white shadow-2xl rounded-xl lg:max-w-xl">
-              <form className="mt-6">
+              <form className="mt-6" onSubmit={handleSubmit(handleSubmitForm)}>
                 <div className="flex-1">
                   <label className="block mb-2 text-sm text-gray-600">
                     Prénom et Nom
@@ -231,9 +207,7 @@ const ContactSection: NextPage = () => {
                   <input
                     required
                     type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
+                    {...register('name', { required: true })}
                     placeholder="John Doe"
                     className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-violet-400 focus:ring-violet-300 focus:ring-opacity-40 focus:outline-none focus:ring"
                   />
@@ -246,9 +220,7 @@ const ContactSection: NextPage = () => {
                   <input
                     required
                     type="text"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
+                    {...register('phone', { required: true })}
                     placeholder="06.00.00.00.00"
                     className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-violet-400 focus:ring-violet-300 focus:ring-opacity-40 focus:outline-none focus:ring"
                   />
@@ -261,9 +233,7 @@ const ContactSection: NextPage = () => {
                   <input
                     required
                     type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
+                    {...register('email', { required: true })}
                     placeholder="johndoe@example.com"
                     className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-violet-400 focus:ring-violet-300 focus:ring-opacity-40 focus:outline-none focus:ring"
                   />
@@ -275,12 +245,10 @@ const ContactSection: NextPage = () => {
                   </label>
                   <select
                     required
-                    name="object"
-                    value={formData.object}
-                    onChange={handleChange}
+                    {...register('object', { required: true })}
                     className="block w-full placeholder:text-slate-400 px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md appearance-none cursor-pointer focus:border-violet-400 focus:ring-violet-300 focus:ring-opacity-40 focus:outline-none focus:ring-1"
                   >
-                    <option value="" disabled hidden>
+                    <option value="" selected disabled hidden>
                       Sélectionnez une option
                     </option>
                     <option value="showcase">Site vitrine</option>
@@ -300,20 +268,16 @@ const ContactSection: NextPage = () => {
                     Message
                   </label>
                   <textarea
-                    required
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
+                    {...register('message', { required: true })}
                     className="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48 focus:border-violet-400 focus:ring-violet-300 focus:ring-opacity-40 focus:outline-none focus:ring"
                     placeholder="Bonjour Digitevo"
                   ></textarea>
                 </div>
-                {error && (
+                {/* {error && (
                   <p className="font-medium text-red-500 pt-1 pl-1">{error}</p>
-                )}
+                )} */}
                 <button
-                  onClick={handleSubmit}
-                  type="button"
+                  type="submit"
                   disabled={isDisabled}
                   className={`${
                     !isDisabled

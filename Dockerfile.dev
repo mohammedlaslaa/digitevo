@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 COPY package.json yarn.lock ./
 COPY  . ./
 RUN yarn install --silent
-ARG NEXT_PUBLIC_API=https://digitevo.laslaamohammed.fr/
+ARG NEXT_PUBLIC_API=https://digitevo.laslaamohammed.fr
 RUN yarn run build
 
 EXPOSE 3000
