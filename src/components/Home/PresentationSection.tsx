@@ -10,7 +10,7 @@ const PresentationSection: NextPage = () => (
         <div className="hidden lg:block lg:w-1/3 relative">
           <Image
             src="/images/web_project.avif"
-            alt="Digital innovative"
+            alt="Projet web"
             width={300}
             height={300}
             className="rounded-full"

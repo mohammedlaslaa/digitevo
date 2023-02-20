@@ -14,11 +14,11 @@ const ContactSection: NextPage = () => {
   const {
     handleSubmit,
     register,
-    formState: { errors },
+    formState: { errors, isValid },
     reset,
   } = useForm<ContactData>();
 
-  const isDisabled = !!Object.keys(errors).length;
+  const isDisabled = !!Object.keys(errors).length || !isValid;
 
   const T = () => (
     <Modal>
@@ -246,9 +246,10 @@ const ContactSection: NextPage = () => {
                   <select
                     required
                     {...register('object', { required: true })}
+                    defaultValue=""
                     className="block w-full placeholder:text-slate-400 px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md appearance-none cursor-pointer focus:border-violet-400 focus:ring-violet-300 focus:ring-opacity-40 focus:outline-none focus:ring-1"
                   >
-                    <option value="" selected disabled hidden>
+                    <option value="" disabled hidden>
                       Sélectionnez une option
                     </option>
                     <option value="showcase">Site vitrine</option>
@@ -277,6 +278,7 @@ const ContactSection: NextPage = () => {
                   <p className="font-medium text-red-500 pt-1 pl-1">{error}</p>
                 )} */}
                 <button
+                  aria-label="Envoyer le formulaire de contact"
                   type="submit"
                   disabled={isDisabled}
                   className={`${

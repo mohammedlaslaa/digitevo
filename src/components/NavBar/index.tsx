@@ -58,6 +58,7 @@ function NavBar() {
           >
             <Link href="/">
               <button
+                aria-label="Retour à la page d'accueil"
                 className="py-2 px-6 lg:mt-6 hover:text-black"
                 onClick={toggleIsOpen}
               >
@@ -67,6 +68,7 @@ function NavBar() {
             {pages.map(({ title, to }) => (
               <Link href={to} key={to}>
                 <button
+                  aria-label={title}
                   className="py-2 px-6 hover:text-black"
                   onClick={toggleIsOpen}
                 >
@@ -98,6 +100,7 @@ function NavBar() {
         <div className="flex items-center">
           <button
             type="button"
+            aria-label="Ouverture du menu de navigation"
             className="w-10 h-10 relative focus:outline-none ml-4 z-40"
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}

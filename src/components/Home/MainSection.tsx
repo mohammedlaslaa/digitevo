@@ -40,8 +40,7 @@ const MainSection: NextPage = () => (
         <Image
           src="/images/computer_phone.svg"
           alt="Digital innovative"
-          width={900}
-          height={600}
+          layout="fill"
         />
       </div>
     </div>
