@@ -28,7 +28,7 @@ function Services() {
             <div className="w-full lg:w-1/3 relative">
               <Image
                 src="/images/collaboration.svg"
-                alt="Digital innovative"
+                alt="Collaboration"
                 width={600}
                 height={400}
               />

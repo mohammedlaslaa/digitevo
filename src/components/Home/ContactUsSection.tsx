@@ -246,9 +246,10 @@ const ContactSection: NextPage = () => {
                   <select
                     required
                     {...register('object', { required: true })}
+                    defaultValue=""
                     className="block w-full placeholder:text-slate-400 px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md appearance-none cursor-pointer focus:border-violet-400 focus:ring-violet-300 focus:ring-opacity-40 focus:outline-none focus:ring-1"
                   >
-                    <option value="" selected disabled hidden>
+                    <option value="" disabled hidden>
                       Sélectionnez une option
                     </option>
                     <option value="showcase">Site vitrine</option>
