@@ -58,6 +58,7 @@ function NavBar() {
           >
             <Link href="/">
               <button
+                name="go to home"
                 className="py-2 px-6 lg:mt-6 hover:text-black"
                 onClick={toggleIsOpen}
               >
@@ -67,6 +68,7 @@ function NavBar() {
             {pages.map(({ title, to }) => (
               <Link href={to} key={to}>
                 <button
+                  name={title}
                   className="py-2 px-6 hover:text-black"
                   onClick={toggleIsOpen}
                 >
@@ -98,6 +100,7 @@ function NavBar() {
         <div className="flex items-center">
           <button
             type="button"
+            name="hamburger menu button"
             className="w-10 h-10 relative focus:outline-none ml-4 z-40"
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}

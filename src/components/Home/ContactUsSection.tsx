@@ -14,11 +14,11 @@ const ContactSection: NextPage = () => {
   const {
     handleSubmit,
     register,
-    formState: { errors },
+    formState: { errors, isValid },
     reset,
   } = useForm<ContactData>();
 
-  const isDisabled = !!Object.keys(errors).length;
+  const isDisabled = !!Object.keys(errors).length || !isValid;
 
   const T = () => (
     <Modal>
@@ -277,6 +277,7 @@ const ContactSection: NextPage = () => {
                   <p className="font-medium text-red-500 pt-1 pl-1">{error}</p>
                 )} */}
                 <button
+                  name="contactus-form"
                   type="submit"
                   disabled={isDisabled}
                   className={`${
