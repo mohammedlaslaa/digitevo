@@ -277,7 +277,7 @@ const ContactSection: NextPage = () => {
                   <p className="font-medium text-red-500 pt-1 pl-1">{error}</p>
                 )} */}
                 <button
-                  name="contactus-form"
+                  aria-label="Envoyer le formulaire de contact"
                   type="submit"
                   disabled={isDisabled}
                   className={`${
