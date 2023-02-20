@@ -58,7 +58,7 @@ function NavBar() {
           >
             <Link href="/">
               <button
-                name="go to home"
+                aria-label="Retour à la page d'accueil"
                 className="py-2 px-6 lg:mt-6 hover:text-black"
                 onClick={toggleIsOpen}
               >
@@ -68,7 +68,7 @@ function NavBar() {
             {pages.map(({ title, to }) => (
               <Link href={to} key={to}>
                 <button
-                  name={title}
+                  aria-label={title}
                   className="py-2 px-6 hover:text-black"
                   onClick={toggleIsOpen}
                 >
