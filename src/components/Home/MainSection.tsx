@@ -36,7 +36,7 @@ const MainSection: NextPage = () => (
           </a>
         </div>
       </div>
-      <div className="hidden sm:block sm:w-1/2 relative my-auto">
+      <div className="hidden h-96 sm:block sm:w-1/2 relative my-auto">
         <Image
           src="/images/computer_phone.svg"
           alt="Digital innovative"
