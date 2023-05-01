@@ -10,7 +10,7 @@ import ContactUsSection from 'components/Home/ContactUsSection';
 import StepSection from 'components/Home/StepSection';
 
 const Home: NextPage = () => (
-  <main className="dark:bg-gray-800 bg-white relative">
+  <main className="bg-white relative">
     <DialogProvider>
       <MainSection />
       <PresentationSection />

@@ -5,7 +5,7 @@ import Image from 'next/image';
 const StepSection = () => (
   <section className="text-gray-600 body-font px-3 md:px-6">
     <div className="container px-2 py-10 mx-auto flex flex-wrap">
-      <div className="flex flex-wrap w-full justify-between dark:text-white">
+      <div className="flex flex-wrap w-full justify-between">
         <div className="lg:w-2/5 xl:w-3/5">
           <div className="flex relative pb-12">
             <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
@@ -25,7 +25,7 @@ const StepSection = () => (
               </svg>
             </div>
             <div className="flex-grow pl-4">
-              <h2 className="uppercase font-medium title-font text-sm text-gray-900 mb-1 dark:text-white">
+              <h2 className="uppercase font-medium title-font text-sm text-gray-900 mb-1">
                 Planification
               </h2>
               <p className="leading-relaxed">
@@ -51,7 +51,7 @@ const StepSection = () => (
               </svg>
             </div>
             <div className="flex-grow pl-4">
-              <h2 className="uppercase font-medium title-font text-sm text-gray-900 mb-1 dark:text-white">
+              <h2 className="uppercase font-medium title-font text-sm text-gray-900 mb-1">
                 Conception
               </h2>
               <p className="leading-relaxed">
@@ -79,7 +79,7 @@ const StepSection = () => (
               </svg>
             </div>
             <div className="flex-grow pl-4">
-              <h2 className="uppercase font-medium title-font text-sm text-gray-900 mb-1 dark:text-white">
+              <h2 className="uppercase font-medium title-font text-sm text-gray-900 mb-1">
                 Développement
               </h2>
               <p className="leading-relaxed">
@@ -107,7 +107,7 @@ const StepSection = () => (
               </svg>
             </div>
             <div className="flex-grow pl-4">
-              <h2 className="uppercase font-medium title-font text-sm text-gray-900 mb-1 dark:text-white">
+              <h2 className="uppercase font-medium title-font text-sm text-gray-900 mb-1">
                 Recettage
               </h2>
               <p className="leading-relaxed">Tests / Débuggage / Formation</p>
@@ -129,7 +129,7 @@ const StepSection = () => (
               </svg>
             </div>
             <div className="flex-grow pl-4">
-              <h2 className="uppercase font-medium title-font text-sm text-gray-900 mb-1 dark:text-white">
+              <h2 className="uppercase font-medium title-font text-sm text-gray-900 mb-1">
                 Mise en ligne
               </h2>
               <p className="leading-relaxed">
