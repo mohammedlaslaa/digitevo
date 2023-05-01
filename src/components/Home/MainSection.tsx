@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Typed from 'react-typed';
 
 const MainSection: NextPage = () => (
-  <section className="bg-white dark:bg-gray-800 flex relative z-10 items-center overflow-hidden px-3 md:px-6">
+  <section className="bg-white flex relative z-10 items-center overflow-hidden px-3 md:px-6">
     <div className="container p-4 mx-auto flex flex-col sm:flex-row relative items-center">
       <div className="w-full sm:w-1/2 flex flex-col relative z-20">
         <div className="mt-2 w-1/2 md:w-2/3 lg:w-2/4">
@@ -13,10 +13,10 @@ const MainSection: NextPage = () => (
           <span className="inline-block w-[calc(2*((100%/4)/4))] h-1 lg:h-2 ml-1 bg-violet-500 rounded-full" />
           <span className="inline-block w-[calc((100%/4)/4)] h-1 lg:h-2 ml-1 bg-violet-500 rounded-full" />
         </div>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl flex flex-col leading-none dark:text-white text-gray-800">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl flex flex-col leading-none text-gray-800">
           L&apos;agence web
         </h1>
-        <p className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-white mt-4 w-100 md:w-4/6 max-w-sm h-20">
+        <p className="text-sm sm:text-base lg:text-lg text-gray-700 mt-4 w-100 md:w-4/6 max-w-sm h-20">
           <Typed
             strings={[
               "L'agence web qui révolutionne le développement de projets grâce à un modèle de collaboration innovant.",

@@ -18,8 +18,8 @@ function App({ Component, pageProps }: AppProps) {
       <div className="flex-1 flex flex-col justify-even">
         <Component {...pageProps} />
       </div>
-      <footer className="flex flex-col items-center justify-center p-6 bg-violet-100 dark:bg-gray-900 sm:flex-row">
-        <p className="text-sm text-center text-gray-600 dark:text-gray-300">
+      <footer className="flex flex-col items-center justify-center p-6 bg-violet-100 sm:flex-row">
+        <p className="text-sm text-center text-gray-600">
           Made with love by Digitevo 💓 -{' '}
           <a href="mailto: contact@digitevo.fr">contact@digitevo.fr</a>
         </p>
