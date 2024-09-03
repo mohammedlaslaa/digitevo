@@ -12,7 +12,7 @@ const send = async (req: NextApiRequest, res: NextApiResponse) => {
         port: 587,
         auth: {
           user: 'contact@digitevo.fr',
-          pass: 'r8oGkeSlf2',
+          pass: '',
         },
       });
 
