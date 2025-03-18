@@ -48,7 +48,7 @@ const ContactSection: NextPage = () => {
 
       reset();
     } catch (error) {
-      //
+     console.error(error);
     }
   };
 

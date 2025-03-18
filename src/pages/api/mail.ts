@@ -8,20 +8,24 @@ const send = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
     try {
       const transporter = nodemailer.createTransport({
-        host: 'pro1.mail.ovh.net',
+        service: "Gmail",
+        host: "smtp.gmail.com",
         port: 587,
+        secure: false,
         auth: {
-          user: 'contact@digitevo.fr',
-          pass: '',
+          user: 'mohamed.laslaa@gmail.com',
+          pass: 'spug fxcd tior fvbm',
         },
       });
+
+
 
       const params: ContactData = JSON.parse(req.body);
       const { name, phone, email, object, message } = params;
 
       const options = {
-        from: 'contact@digitevo.fr',
-        to: 'contact@digitevo.fr',
+        from: 'mohamed.laslaa@gmail.com',
+        to: 'digitevo7@gmail.com',
         subject: 'Demande de contact',
         text: '',
         html: `<style>
@@ -40,6 +44,8 @@ const send = async (req: NextApiRequest, res: NextApiResponse) => {
       };
 
       await transporter.sendMail(options);
+      await transporter.sendMail({ ...options,  to: 'mohamed.laslaa@gmail.com', });
+
     } catch (error) {
       if (error instanceof Error) return res.status(500).send(error.message);
     }
