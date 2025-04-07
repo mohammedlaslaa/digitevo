@@ -38,6 +38,9 @@ const ContactSection: NextPage = () => {
   );
 
   const handleSubmitForm = async (data: ContactData) => {
+
+    window.gtag_report_conversion?.();
+
     try {
       await fetch(`${process.env.NEXT_PUBLIC_API}/api/mail`, {
         method: 'POST',

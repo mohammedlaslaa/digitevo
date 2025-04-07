@@ -10,3 +10,10 @@ export interface IDialog {
   close: () => void;
   isOpen: boolean;
 }
+
+
+declare global {
+  interface Window {
+    gtag_report_conversion: (url?: string) => boolean;
+  }
+}
